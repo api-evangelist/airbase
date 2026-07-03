@@ -1,0 +1,215 @@
+aid: airbase
+url: https://raw.githubusercontent.com/api-evangelist/airbase/refs/heads/main/apis.yml
+name: Airbase
+kind: company
+description: Airbase is a modern spend management platform for finance teams that
+  combines accounts-payable (AP) automation and bill pay, guided procurement and
+  purchase orders, corporate cards, and expense reimbursements on a single system
+  with real-time general-ledger sync. Airbase Inc. was acquired by Paylocity in a
+  ~$325M deal announced September 4, 2024 and completed October 1, 2024, and now
+  operates as "Airbase by Paylocity," extending Paylocity's HCM suite into the
+  office of the CFO. Airbase exposes a developer platform at developer.airbase.io
+  (REST API reference, OpenAPI/Swagger, Postman and Insomnia collections, a
+  webhooks management API, an OAuth playground, and a sandbox) used to build
+  custom connections for systems not covered by the pre-built integrations. API
+  access is account-gated - credentials are generated inside the customer's
+  Airbase/Paylocity tenant rather than through open self-serve signup - so the
+  logical APIs below are honestly modeled from the documented product surface and
+  developer portal, and the exact endpoint paths and base URL are not publicly
+  reproduced here (endpointsModeled).
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Spend Management
+- Accounts Payable
+- Bill Pay
+- Procurement
+- Corporate Cards
+- Expense Management
+- FinTech
+- Paylocity
+- Gated API
+created: '2026-07-03'
+modified: '2026-07-03'
+specificationVersion: '0.19'
+apis:
+- aid: airbase:airbase-bills-ap-api
+  name: Airbase Bills & AP Automation API
+  tags:
+  - Bills
+  - Accounts Payable
+  - Bill Pay
+  - Invoices
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.airbase.io/
+  properties:
+  - url: https://developer.airbase.io/
+    type: Documentation
+  - url: https://www.airbase.com/
+    type: Website
+  description: Programmatically create, list, retrieve, and update bills and vendor
+    invoices flowing through Airbase's AP automation - including bill line items,
+    approval state, payment status, and payment method - to automate pre-approval,
+    payment, and accounting workflows. Endpoints are honestly modeled from the
+    documented AP/bill-pay product surface; access is account-gated
+    (endpointsModeled).
+- aid: airbase:airbase-purchase-orders-api
+  name: Airbase Purchase Requests & Orders API
+  tags:
+  - Purchase Requests
+  - Purchase Orders
+  - Procurement
+  - Intake
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.airbase.io/
+  properties:
+  - url: https://developer.airbase.io/
+    type: Documentation
+  - url: https://www.airbase.com/
+    type: Website
+  description: Create and track guided purchase requests and purchase orders,
+    including intake details, line items, vendor and GL coding, budget checks, and
+    the approval milestones a request transitions through. Airbase emits webhook
+    events such as "purchase request approved" as requests move through their
+    workflow. Endpoints modeled from the documented procurement surface;
+    account-gated (endpointsModeled).
+- aid: airbase:airbase-vendors-api
+  name: Airbase Vendors API
+  tags:
+  - Vendors
+  - Suppliers
+  - Master Data
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.airbase.io/
+  properties:
+  - url: https://developer.airbase.io/
+    type: Documentation
+  - url: https://vendors.airbase.io/
+    type: Website
+  description: Manage the vendor/supplier master record - create, list, retrieve,
+    and update vendors, their payment details, tax and onboarding information, and
+    the relationships that bills, purchase orders, and payments are made against.
+    Airbase also runs a separate vendor portal at vendors.airbase.io. Endpoints
+    modeled from the documented vendor-management surface; account-gated
+    (endpointsModeled).
+- aid: airbase:airbase-cards-api
+  name: Airbase Corporate Cards API
+  tags:
+  - Corporate Cards
+  - Virtual Cards
+  - Card Programs
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.airbase.io/
+  properties:
+  - url: https://developer.airbase.io/
+    type: Documentation
+  - url: https://www.airbase.com/
+    type: Website
+  description: Access Airbase corporate and virtual card programs - list cards,
+    card holders, spend limits and controls, and their associated policies - to
+    reconcile card spend against budgets and the general ledger. Endpoints modeled
+    from the documented corporate-card product surface; account-gated
+    (endpointsModeled).
+- aid: airbase:airbase-transactions-api
+  name: Airbase Transactions API
+  tags:
+  - Transactions
+  - Spend Data
+  - Reconciliation
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.airbase.io/
+  properties:
+  - url: https://developer.airbase.io/
+    type: Documentation
+  - url: https://www.airbase.com/
+    type: Website
+  description: Pull unified transaction and spend data across cards, bills, and
+    reimbursements - amounts, merchants, dates, GL coding, and reconciliation
+    status - for reporting, analytics, and closing the books. Endpoints modeled
+    from the documented spend-data surface; account-gated (endpointsModeled).
+- aid: airbase:airbase-reimbursements-api
+  name: Airbase Expense Reimbursements API
+  tags:
+  - Expenses
+  - Reimbursements
+  - Employee Spend
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.airbase.io/
+  properties:
+  - url: https://developer.airbase.io/
+    type: Documentation
+  - url: https://www.airbase.com/
+    type: Website
+  description: Create and track employee expense reimbursements and out-of-pocket
+    claims - receipts, line items, approval state, and payout status - as part of
+    Airbase's expense management workflows. Endpoints modeled from the documented
+    reimbursement surface; account-gated (endpointsModeled).
+- aid: airbase:airbase-approvals-api
+  name: Airbase Approvals API
+  tags:
+  - Approvals
+  - Workflows
+  - Policy
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.airbase.io/
+  properties:
+  - url: https://developer.airbase.io/
+    type: Documentation
+  - url: https://www.airbase.com/
+    type: Website
+  description: Inspect and act on the multi-step approval workflows that gate
+    purchase requests, bills, cards, and reimbursements - approvers, policy rules,
+    current state, and milestone transitions. Approval milestone changes are also
+    delivered as webhook events. Endpoints modeled from the documented approvals
+    surface; account-gated (endpointsModeled).
+- aid: airbase:airbase-gl-accounting-sync-api
+  name: Airbase GL & Accounting Sync API
+  tags:
+  - General Ledger
+  - Accounting
+  - ERP Sync
+  - GL Coding
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.airbase.com/sheets/erp-integration-api
+  properties:
+  - url: https://developer.airbase.io/
+    type: Documentation
+  - url: https://www.airbase.com/integrations-overview
+    type: Website
+  description: Read and push general-ledger coding and accounting records so spend
+    stays in sync with the ERP/GL. Airbase promotes a REST API specifically for
+    building custom ERP/GL connections for systems not on its pre-built
+    integration list. Endpoints modeled from the documented ERP-integration/GL-sync
+    surface; account-gated (endpointsModeled).
+- aid: airbase:airbase-webhooks-api
+  name: Airbase Webhooks Management API
+  tags:
+  - Webhooks
+  - Events
+  - Subscriptions
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.airbase.io/
+  properties:
+  - url: https://developer.airbase.io/
+    type: Documentation
+  description: Register and manage webhook subscriptions so external systems
+    receive Airbase events - for example a purchase request being approved or a
+    workflow transitioning through a milestone - as JSON payloads (id, object,
+    type, created_date, data). A webhooks management API is documented on the
+    Airbase developer portal. Endpoints modeled from the documented webhook
+    surface; account-gated (endpointsModeled).
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/airbase
+- type: Website
+  url: https://www.airbase.com/
+- type: Documentation
+  url: https://developer.airbase.io/
+- type: Plans
+  url: plans/airbase-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/airbase-rate-limits.yml
+- type: FinOps
+  url: finops/airbase-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

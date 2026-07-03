@@ -1,0 +1,48 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Airbase
+providerId: airbase
+created: '2026-07-03'
+modified: '2026-07-03'
+reconciled: false
+tags:
+- Spend Management
+- Paylocity
+- Rate Limiting
+- Quotas
+- Gated API
+description: >-
+  Airbase does not publish public numeric rate limits for its developer API. The
+  API reference sits behind an account-gated developer portal
+  (developer.airbase.io), so any per-account or per-endpoint request limits are
+  governed inside the customer's Airbase/Paylocity tenant and are not documented
+  in the open. Standard REST client hygiene - exponential backoff with jitter,
+  honoring Retry-After on HTTP 429, and idempotent retries - should be assumed.
+notes: >-
+  No numeric limits are documented as of the review date. Confirm any limits in
+  the authenticated developer portal or with Airbase/Paylocity support.
+sources:
+- https://developer.airbase.io/
+- https://apitracker.io/a/airbase
+responseCodes:
+  throttled: 429
+limits:
+- name: REST API Requests
+  scope: account
+  metric: requests
+  limit: not published
+  notes: No fixed numeric request-rate limit is documented publicly; governed inside the account-gated portal.
+- name: Webhook Delivery
+  scope: subscription
+  metric: events
+  limit: not published
+  notes: Outbound webhook delivery (e.g. purchase request approved / milestone events); retry/delivery semantics not publicly documented.
+policies:
+- name: Backoff Strategy
+  description: Clients should implement exponential backoff with jitter and honor Retry-After on 429 responses.
+- name: Account-Gated Governance
+  description: Because access is provisioned per Airbase/Paylocity tenant, effective limits are enforced and communicated within the account rather than via public documentation.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

@@ -1,0 +1,115 @@
+aid: airbase
+name: Airbase
+review:
+  question: Does Airbase expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-03'
+  reviewer: API Evangelist
+  operatingStatus: >-
+    Active as "Airbase by Paylocity." Airbase Inc. was acquired by Paylocity in
+    a deal valued at approximately $325M - announced September 4, 2024 and
+    completed October 1, 2024. The product continues to operate and is being
+    integrated into Paylocity's HCM platform to serve the office of the CFO. The
+    developer portal remains live at developer.airbase.io (it renders under
+    Paylocity branding).
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Airbase's documented developer surface is
+    request/response REST over HTTPS plus outbound webhooks (server-to-endpoint
+    HTTP callbacks such as "purchase request approved"). Webhooks are one-way
+    HTTP POSTs to a subscriber URL, not a bidirectional or server-push socket.
+    No WebSocket (ws:// or wss://) or SSE endpoint is documented on Airbase's own
+    API, so there is no server-push transport to model with AsyncAPI.
+findings:
+  summary: |
+    Airbase does not publish a documented public WebSocket API. Airbase is a
+    spend management platform (AP automation / bill pay, procurement and purchase
+    orders, corporate cards, and expense reimbursements) with real-time
+    general-ledger sync. It exposes a developer platform at developer.airbase.io
+    that documents a REST API, OpenAPI/Swagger definitions, Postman and Insomnia
+    collections, a webhooks management API, an OAuth playground, authentication,
+    and a sandbox environment. The API is real but account-gated: it is intended
+    for Airbase customers building custom connections (notably ERP/GL) for
+    systems not covered by pre-built integrations, and credentials are generated
+    inside the customer's Airbase/Paylocity tenant rather than through open
+    self-serve public signup. The integration surface is request/response REST
+    plus outbound webhooks; no realtime, bidirectional, or streaming WebSocket
+    endpoint is documented on Airbase's own API.
+  accessModel: |
+    Account-gated / customer-facing developer API. Access requires an Airbase
+    (now Paylocity) account; API tokens/OAuth credentials are provisioned within
+    the tenant. A free developer/sandbox account and an OAuth playground are
+    referenced on the developer portal, but this is not an open, self-serve,
+    publicly price-listed API in the way a typical dev-platform vendor is.
+  acquisition: |
+    Paylocity acquired Airbase Inc. for ~$325M. Definitive agreement announced
+    September 4, 2024; acquisition completed October 1, 2024. Now marketed as
+    "Airbase by Paylocity."
+  endpointsModeled: true
+  endpointsModeledNote: |
+    The logical APIs in apis.yml (Bills/AP, Purchase Requests/Orders, Vendors,
+    Corporate Cards, Transactions, Reimbursements, Approvals, GL/Accounting Sync,
+    Webhooks) are honestly modeled from Airbase's documented product surface and
+    the developer portal's advertised contents. Exact endpoint paths, the API
+    base URL, and full OpenAPI were not reproduced because the reference sits
+    behind the account-gated developer portal (developer.airbase.io renders as a
+    branded single-page app that is not machine-scrapable without a session). No
+    OpenAPI, collections, or per-endpoint files were fabricated.
+  transports:
+    - protocol: REST
+      scheme: https
+      documented: true
+      note: REST API reference, OpenAPI/Swagger, and Postman/Insomnia collections are advertised on developer.airbase.io. Exact base URL is behind the gated portal.
+    - protocol: Webhook
+      scheme: https
+      documented: true
+      note: Webhooks management API; Airbase POSTs events (e.g. purchase request approved / milestone transitions) to subscriber URLs as JSON. Server-to-endpoint HTTP, not WebSocket.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere on Airbase's developer portal as of the review date.
+  authentication: |
+    Airbase's developer portal references OAuth (an OAuth playground) and
+    token-based authentication; credentials are generated per-tenant inside the
+    Airbase/Paylocity account. Exact flows are behind the gated portal.
+  rateLimits: |
+    No public numeric rate limits are documented for the Airbase API as of the
+    review date; limits (if any) are governed inside the account-gated portal.
+sources:
+  - url: https://developer.airbase.io/
+    type: Documentation
+    note: Airbase developer portal (renders under Paylocity branding); advertises REST API reference, OpenAPI/Swagger, Postman/Insomnia collections, webhooks management API, OAuth playground, and sandbox.
+  - url: https://apitracker.io/a/airbase
+    type: Reference
+    note: Third-party profile confirming Airbase REST API, OpenAPI/Swagger, Postman/Insomnia collections, webhooks + webhooks management API, sandbox, OAuth, and a free developer account.
+  - url: https://www.airbase.com/
+    type: Website
+    note: Airbase by Paylocity marketing site; describes the spend management product (AP automation, procurement, cards, expenses).
+  - url: https://www.airbase.com/integrations-overview
+    type: Website
+    note: Integrations overview; describes GL/ERP connections and a REST API for building custom connections not on the pre-built list.
+  - url: https://www.airbase.com/sheets/erp-integration-api
+    type: Website
+    note: ERP integration / API landing page.
+  - url: https://vendors.airbase.io/
+    type: Website
+    note: Airbase vendor portal (separate from the developer API).
+  - url: https://developers.lumos.com/reference/processairbasemilestoneevent-1
+    type: Reference
+    note: Third-party (Lumos) webhook integration showing Airbase event payload shape (id, object, type, created_date, data) and a "purchase request approved" milestone event.
+  - url: https://www.paylocity.com/company/about-us/newsroom/press-releases/paylocity-announces-completion-of-acquisition-of-airbase-inc/
+    type: PressRelease
+    note: Paylocity announces completion of the Airbase acquisition (closed October 1, 2024).
+  - url: https://techcrunch.com/2024/09/04/paylocity-acquiring-corporate-spend-startup-airbase-for-325m/
+    type: News
+    note: Reports the ~$325M acquisition price and September 4, 2024 announcement.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists on Airbase's own API. The documented
+    developer surface is request/response REST plus outbound webhooks, and the
+    API is account-gated. No AsyncAPI document was created because there is no
+    server-push transport to model. Logical APIs were modeled honestly from the
+    documented product surface and flagged endpointsModeled; no OpenAPI,
+    collections, or endpoint paths were fabricated.

@@ -1,0 +1,91 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Airbase
+providerId: airbase
+created: '2026-07-03'
+modified: '2026-07-03'
+reconciled: false
+tags:
+- Spend Management
+- Accounts Payable
+- Procurement
+- Corporate Cards
+- Paylocity
+- Plans
+description: >-
+  Airbase (now Airbase by Paylocity) does not publish self-serve, public list
+  pricing for its spend management platform or its developer API. Airbase is
+  sold as quote-based SaaS: plans are historically packaged around company size
+  and the modules in use (AP automation / bill pay, guided procurement,
+  corporate cards, expense reimbursements), with pricing obtained by requesting
+  a demo/quote from sales. The developer API is not a separately metered,
+  price-listed product - it is an entitlement of the platform used to build
+  custom connections. Following the October 1, 2024 Paylocity acquisition,
+  packaging is increasingly aligned with Paylocity's HCM + spend suite. No
+  numeric rates are reconciled here.
+notes: >-
+  Verify current packaging and pricing by requesting a demo/quote via
+  airbase.com or through Paylocity. A free developer/sandbox account and an
+  OAuth playground are referenced on developer.airbase.io, but the underlying
+  platform is contract-priced, not open self-serve.
+sources:
+- https://www.airbase.com/
+- https://developer.airbase.io/
+- https://www.airbase.com/integrations-overview
+- https://www.paylocity.com/company/about-us/newsroom/press-releases/paylocity-announces-completion-of-acquisition-of-airbase-inc/
+plans:
+- id: airbase-quote-based
+  name: Airbase Platform (Quote-Based)
+  type: enterprise
+  description: >-
+    Contract-priced spend management platform. Packaging historically reflects
+    company size and the modules enabled (AP automation / bill pay, guided
+    procurement and purchase orders, corporate cards, expense reimbursements)
+    with real-time GL sync. Pricing is obtained by requesting a demo/quote.
+  entries:
+  - label: Platform Subscription
+    name: platform_subscription
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales for a quote
+    userMultiplied: false
+  elements:
+  - name: AP Automation and Bill Pay
+  - name: Guided Procurement and Purchase Orders
+  - name: Corporate and Virtual Cards
+  - name: Expense Reimbursements
+  - name: Real-Time GL / ERP Sync
+  - name: Developer API and Webhooks (account entitlement)
+- id: airbase-developer-sandbox
+  name: Developer / Sandbox Access
+  type: free
+  description: >-
+    A free developer/sandbox account and OAuth playground are referenced on the
+    Airbase developer portal for building and testing integrations. This is
+    developer access, not a priced platform tier; production API use requires an
+    Airbase/Paylocity account.
+  entries:
+  - label: Developer Sandbox
+    name: developer_sandbox
+    type: free
+    metric: access
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: free (developer/sandbox access; account-gated)
+    userMultiplied: false
+  elements:
+  - name: REST API Reference
+  - name: OpenAPI / Swagger
+  - name: Postman and Insomnia Collections
+  - name: Webhooks Management API
+  - name: OAuth Playground
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
