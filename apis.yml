@@ -198,6 +198,8 @@ apis:
     Airbase developer portal. Endpoints modeled from the documented webhook
     surface; account-gated (endpointsModeled).
 common:
+- type: DomainSecurity
+  url: security/airbase-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/airbase
 - type: Website
