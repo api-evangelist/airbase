@@ -37,6 +37,16 @@ tags:
 - Procurement
 - Corporate Cards
 - Expense Management
+- Fintech
+- Paylocity
+- Gated API
+tags_raw:
+- Spend Management
+- Accounts Payable
+- Bill Pay
+- Procurement
+- Corporate Cards
+- Expense Management
 - FinTech
 - Paylocity
 - Gated API
@@ -124,6 +134,10 @@ apis:
 - aid: airbase:airbase-transactions-api
   name: Airbase Transactions API
   tags:
+  - Transaction
+  - Spend Data
+  - Reconciliation
+  tags_raw:
   - Transactions
   - Spend Data
   - Reconciliation
@@ -141,6 +155,10 @@ apis:
 - aid: airbase:airbase-reimbursements-api
   name: Airbase Expense Reimbursements API
   tags:
+  - Expenses
+  - Reimbursement
+  - Employee Spend
+  tags_raw:
   - Expenses
   - Reimbursements
   - Employee Spend
@@ -195,6 +213,10 @@ apis:
 - aid: airbase:airbase-webhooks-api
   name: Airbase Webhooks Management API
   tags:
+  - Webhook
+  - Event
+  - Subscription
+  tags_raw:
   - Webhooks
   - Events
   - Subscriptions
