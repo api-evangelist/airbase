@@ -1,4 +1,4 @@
-# Airbase (airbase)
+# Airbase
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,99 +64,110 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Airbase is a modern spend management platform for finance teams that combines accounts-payable (AP) automation and bill pay, guided procurement and purchase orders, corporate cards, and expense reimbursements on a single system with real-time general-ledger sync.
+Airbase is a modern spend management platform for finance teams that combines accounts-payable (AP) automation and bill pay, guided procurement and purchase orders, corporate cards, and expense reimbursements on a single system with real-time general-ledger sync. Airbase Inc. was acquired by Paylocity in a ~$325M deal announced September 4, 2024 and completed October 1, 2024, and now operates as "Airbase by Paylocity," extending Paylocity's HCM suite into the office of the CFO. Airbase exposes a developer platform at developer.airbase.io (REST API reference, OpenAPI/Swagger, Postman and Insomnia collections, a webhooks management API, an OAuth playground, and a sandbox) used to build custom connections for systems not covered by the pre-built integrations. API access is account-gated - credentials are generated inside the customer's Airbase/Paylocity tenant rather than through open self-serve signup - so the logical APIs below are honestly modeled from the documented product surface and developer portal, and the exact endpoint paths and base URL are not publicly reproduced here (endpointsModeled).
 
-**Operating status / acquisition:** Airbase Inc. was acquired by **Paylocity** in a deal valued at approximately **$325M** - the definitive agreement was announced **September 4, 2024** and the acquisition **completed October 1, 2024**. Airbase now operates as **"Airbase by Paylocity,"** extending Paylocity's HCM suite into the office of the CFO. The product and its developer portal remain live.
+**Areas:** Spend Management · Accounts Payable · Bill Pay · Procurement · Corporate Cards · Expense Management · Fintech · Paylocity · Gated API
 
-**API access model (important):** Airbase exposes a developer platform at [developer.airbase.io](https://developer.airbase.io/) that documents a REST API, OpenAPI/Swagger definitions, Postman and Insomnia collections, a webhooks management API, an OAuth playground, authentication, and a sandbox. The API is **real but account-gated** - it is intended for Airbase customers building custom connections (notably ERP/GL) for systems not covered by the pre-built integrations, and credentials are provisioned inside the customer's Airbase/Paylocity tenant rather than through open self-serve public signup. Because the reference lives behind that gated, branded single-page portal, the logical APIs documented here are **honestly modeled** from the documented product surface (`endpointsModeled`); exact endpoint paths, the API base URL, and full OpenAPI are **not fabricated**.
+## Airbase on APIs.io
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/airbase/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/airbase/refs/heads/main/apis.yml)
+Everything profiled for Airbase is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/airbase/](https://apis.io/providers/airbase/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (9)
 
-- Spend Management
-- Accounts Payable
-- Bill Pay
-- Procurement
-- Corporate Cards
-- Expense Management
-- FinTech
-- Paylocity
-- Gated API
+- [Airbase Bills & AP Automation API](https://apis.io/apis/airbase/airbase-bills-ap-api/) — Programmatically create, list, retrieve, and update bills and vendor invoices flowing through Airbase's AP automation - including bill line items, approval…
+- [Airbase Purchase Requests & Orders API](https://apis.io/apis/airbase/airbase-purchase-orders-api/) — Create and track guided purchase requests and purchase orders, including intake details, line items, vendor and GL coding, budget checks, and the approval…
+- [Airbase Vendors API](https://apis.io/apis/airbase/airbase-vendors-api/) — Manage the vendor/supplier master record - create, list, retrieve, and update vendors, their payment details, tax and onboarding information, and the…
+- [Airbase Corporate Cards API](https://apis.io/apis/airbase/airbase-cards-api/) — Access Airbase corporate and virtual card programs - list cards, card holders, spend limits and controls, and their associated policies - to reconcile card…
+- [Airbase Transactions API](https://apis.io/apis/airbase/airbase-transactions-api/) — Pull unified transaction and spend data across cards, bills, and reimbursements - amounts, merchants, dates, GL coding, and reconciliation status - for…
+- [Airbase Expense Reimbursements API](https://apis.io/apis/airbase/airbase-reimbursements-api/) — Create and track employee expense reimbursements and out-of-pocket claims - receipts, line items, approval state, and payout status - as part of Airbase's…
+- [Airbase Approvals API](https://apis.io/apis/airbase/airbase-approvals-api/) — Inspect and act on the multi-step approval workflows that gate purchase requests, bills, cards, and reimbursements - approvers, policy rules, current state,…
+- [Airbase GL & Accounting Sync API](https://apis.io/apis/airbase/airbase-gl-accounting-sync-api/) — Read and push general-ledger coding and accounting records so spend stays in sync with the ERP/GL. Airbase promotes a REST API specifically for building…
+- [Airbase Webhooks Management API](https://apis.io/apis/airbase/airbase-webhooks-api/) — Register and manage webhook subscriptions so external systems receive Airbase events - for example a purchase request being approved or a workflow…
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-07-03
-- **Modified:** 2026-07-03
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs (modeled from the documented product surface)
+#### Security (1)
 
-Each API below is honestly modeled from Airbase's documented spend-management product and developer portal. Endpoints are gated (`endpointsModeled`); exact paths are not reproduced.
+Authentication, trust centre, and vulnerability disclosure.
 
-### Airbase Bills & AP Automation API
+- [Airbase Domain Security](https://apis.io/security/airbase/airbase-domain-security/)
 
-Create, list, retrieve, and update bills and vendor invoices flowing through Airbase's AP automation - line items, approval state, payment status, and payment method.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://developer.airbase.io/](https://developer.airbase.io/)
+Published plans, tiers and prices.
 
-### Airbase Purchase Requests & Orders API
+- [Airbase Plans Pricing](https://apis.io/plans/airbase/airbase-plans-pricing/)
 
-Create and track guided purchase requests and purchase orders - intake details, line items, vendor and GL coding, budget checks, and the approval milestones a request transitions through (Airbase emits webhook events such as "purchase request approved").
+#### Rate limits (1)
 
-- **Human URL:** [https://developer.airbase.io/](https://developer.airbase.io/)
+Published request limits.
 
-### Airbase Vendors API
+- [Airbase Rate Limits](https://apis.io/rate-limits/airbase/airbase-rate-limits/)
 
-Manage the vendor/supplier master record - vendors, payment details, tax and onboarding information, and the relationships bills, POs, and payments are made against. Airbase also runs a separate vendor portal at [vendors.airbase.io](https://vendors.airbase.io/).
+#### FinOps (1)
 
-- **Human URL:** [https://developer.airbase.io/](https://developer.airbase.io/)
+What the API costs to run, by operation.
 
-### Airbase Corporate Cards API
+- [Airbase Finops](https://apis.io/finops/airbase/airbase-finops/)
 
-List corporate and virtual cards, card holders, spend limits and controls, and card policies to reconcile card spend against budgets and the general ledger.
+## Where to find this API
 
-- **Human URL:** [https://developer.airbase.io/](https://developer.airbase.io/)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-### Airbase Transactions API
-
-Pull unified transaction and spend data across cards, bills, and reimbursements - amounts, merchants, dates, GL coding, and reconciliation status - for reporting and close.
-
-- **Human URL:** [https://developer.airbase.io/](https://developer.airbase.io/)
-
-### Airbase Expense Reimbursements API
-
-Create and track employee expense reimbursements and out-of-pocket claims - receipts, line items, approval state, and payout status.
-
-- **Human URL:** [https://developer.airbase.io/](https://developer.airbase.io/)
-
-### Airbase Approvals API
-
-Inspect and act on the multi-step approval workflows that gate purchase requests, bills, cards, and reimbursements - approvers, policy rules, current state, and milestone transitions (also delivered as webhook events).
-
-- **Human URL:** [https://developer.airbase.io/](https://developer.airbase.io/)
-
-### Airbase GL & Accounting Sync API
-
-Read and push general-ledger coding and accounting records so spend stays in sync with the ERP/GL. Airbase promotes a REST API specifically for building custom ERP/GL connections for systems not on its pre-built integration list.
-
-- **Human URL:** [https://www.airbase.com/sheets/erp-integration-api](https://www.airbase.com/sheets/erp-integration-api)
-
-### Airbase Webhooks Management API
-
-Register and manage webhook subscriptions so external systems receive Airbase events (e.g. a purchase request approved or a workflow milestone transition) as JSON payloads (`id`, `object`, `type`, `created_date`, `data`).
-
-- **Human URL:** [https://developer.airbase.io/](https://developer.airbase.io/)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/airbase)
 - [Website](https://www.airbase.com/)
 - [Documentation](https://developer.airbase.io/)
-- [Plans](plans/airbase-plans-pricing.yml)
-- [Rate Limits](rate-limits/airbase-rate-limits.yml)
-- [Fin Ops](finops/airbase-finops.yml)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 7.8** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 9.5 |
+| Access clarity | 5.3 |
+
+**Agent readiness 0.6** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.4** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/airbase/](https://apis.io/providers/airbase/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Airbase: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/airbase/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
