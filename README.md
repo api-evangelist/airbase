@@ -121,16 +121,16 @@ Links to the company's own pages. This repository publishes no copy of their spe
 
 ## API Evangelist rating
 
-**Kin Score 7.8** — minimal · rubric 0.24.0 · scored 2026-10-17
+**Kin Score 6.7** — minimal · rubric 0.28.1 · scored 2026-11-21
 
 | Facet | Score |
 |---|---|
 | Discoverability | 62.5 |
 | Contract quality | 0.0 |
 | Contract governance | 0.0 |
-| Operational transparency | 5.3 |
+| Operational transparency | 4.8 |
 | Developer ergonomics | 9.5 |
-| Access clarity | 5.3 |
+| Access clarity | 4.3 |
 
 **Agent readiness 0.6** — human-only
 
@@ -155,8 +155,14 @@ Links to the company's own pages. This repository publishes no copy of their spe
 | Protected Resource Metadata | — |
 | Dynamic Client Registration | — |
 | Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+| MCP Tool Quality | na |
+| Onboarding Descriptor | — |
+| Dns Aid Index | na |
+| Markdown Negotiation | na |
 
-**Regulatory alignment 5.4** — Payments
+**Regulatory alignment 0.0** — Payments
 
 The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/airbase/](https://apis.io/providers/airbase/).
 
